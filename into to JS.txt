@@ -1,0 +1,346 @@
+
+INtro to JavaScript
+
+-es6 ecmascript mainly use and interchangeable with JS
+-6 vaule types:
+	boolean, string, number, null, undefnied, function and objects
+
+-boolen: true or false
+-string: normal alphabets (b,c,x), use in single or double quote "hello" or 'hi'
+-number: numeric (1,2,3)  
+-undefined: no value
+function: function {}
+-object: {}
+
+
+
+unary: ! etc 
+binary operator: + or -
+unternally: ? etc
+Nan: not a number (0/0)
+
+-\n for new line 
+	"hello\world" 
+
+-"hello + "world"; = hello world
+
+-!true; = false
+- true && flase;  = false
+-true ||
+
+
+
+-2 != 5; true
+-2 ===5; for comparing 
+- one equal sign for assigning the value
+
+
+-Object:
+ -are like containers, they contain many different many vaules, always use with curly brackets {} : {mynumber: 2}, for storing many values {mynumber: 2, foo:"foo", my obj:{...} }
+
+	{
+		mynumber: 2,
+		foo: "foo",
+		myObj; {},	
+	}
+
+const myVariable = 1
+
+const myVariable = 1 + 1;
+
+var foo = "bar"; or vat fooBar = "bar"; (camel case is more popular)
+
+cons , let and var can be used
+
+const cant be reassigned, let can be
+
+
+Function: is a set of values, which can be call anytime to run it
+
+Function add(a, b){
+	return a+b;
+}
+
+add (3,4);
+
+const myAnnoFunc = function(name) {
+	return "hello" + name;
+}
+
+myAnnoFunc("foo");
+"hello foo""
+
+
+Arrays:
+
+arrays are like objects
+
+-[2,3,6]
+
+const arr = [2,3,6]
+
+to call back specific array element
+
+arr[1]
+arr["1"]
+3
+
+
+
+If:
+
+ if (){
+}
+
+
+  if(!str1){
+
+}
+
+-LOOPS:
+
+3 loops : for, for/in, while and do/while
+
+-systax: while (){ console.log ("")}
+
+- i=0 
+ while (i<100){console.log("foo")
+	i++;
+
+
+for (let i=0; i < 1000; i++) {console.log}
+
+
+-short circuit valuation:
+
+const foo = "string" || add (1,2)
+ if ("srting"){
+ add(1,2)
+}
+const bar = "string" && add (1,2)
+
+
+ 8th May:
+
+
+-Scope in JS
+
+galaxy scope
+
+
+function external (){
+	var myVar = "myVar";
+	
+	function middle(){
+	myVar += "middle";
+
+	function internal (){
+	var myVar;
+	myVar += "internal";
+	}
+	internal();
+	}
+	middle()
+	return myVar;
+}
+external()
+
+-Arrays
+
+ const arr1000 = [1,2,3]
+ 
+ arr1000.pop();
+
+ console.log(arr1000);
+	[1,2]
+
+ const arr99 = [1,2,3];
+ arr99.forEach(function(element){
+	console.log(element);
+});
+
+1
+2
+3
+
+const arr99 = [1,2,3];
+ arr99.forEach(function(element){
+	console.log("element is:", element);
+});
+
+element is:1
+element is:2
+element is:3
+
+const arr99 = [1,2,3];
+ arr99.forEach(function(element, i){
+	console.log("element" i, "is:", element);
+});
+
+element 0 is:1
+element 1 is:2
+element 2 is:3
+
+
+ arr99.map(function(element) {
+	return element +100;
+
+ });
+ 
+ (3) [101,102,103]
+
+mapped always return a new array and can add element
+
+ -Filter
+
+ const filterted1 = arr99.filter(function(element, index) {
+	return true;
+ });
+
+ console.log(filtered1);
+ (3) [1, 2, 3]
+
+-map() does not replace filter and vice versa
+
+
+
+-forEach() is like side effect and append the original array : like html etc
+
+
+-filter() creates a new array and filter the original array
+
+-are high order function and function name is call back
+
+	 	forEach(element1 , element2) : undefined, 
+ -[1,2,3].	map(element1 , element2) :[new array]
+     		filter(element1 , element2) :[new array]
+
+
+-Break/continue
+
+	for (let i=0; i < 100; i++)
+	if (i===50) break/continue;
+	console.log(i)
+
+
+   	for (let i=0; i < 100; i++)
+	if (i===50) continue;
+	console.log(i)
+
+- break/continue does not work with forEach,map or filter
+
+
+-Reduce:
+
+	[1,2,3].reduce(,)
+
+	[1,2,3].reduce(function() {},0)
+
+	[1,2,3].reduce(function() {},0)
+
+
+
+
+
+-if i reduce the number it will return the number or array
+-the last vaule will be the main result
+
+
+-arr.reduce(function(acc, item) {
+	if (item > 3) {
+
+	return acc.push(item);
+}
+	return acc;
+}, []);
+
+
+ arr.reduce(function(acc, item, index){
+	return{[index]; item}
+}, {});
+
+
+
+[1,2,3,4,8,2,10] arr.reduce(function(acc, item){
+	const newArray = [];
+
+	if(item % 2 === 0) {
+		newArray.push(item +100 );
+}
+	return acc.concat(newArray)
+}, []);
+(4) [104,108,102,110]
+
+
+ [1,3,4,8,2,10].reduce((acc,item) => {
+     return acc + item;
+},0);
+
+
+11 MAY 2018:
+
+
+
+- there are many ways to create objects in JS. i.e:
+- any function inside a obj are methods
+
+- const obj = {
+	num: 2,
+	method: function(){
+	return "hello!";
+
+}
+};
+
+2nd way of making obj
+
+-const obj4 = new object();
+
+
+
+-window.foo
+ "foo"
+
+alert("hello!")
+
+object.keys({ foo: "foo!" , bar: "bar"});
+objects.values({});
+objects.entries({});
+
+
+
+- function FooConstructor(){
+	this.test = "test"
+}
+
+ const foo5 = new FooConstructor();
+
+ FooConstructor.prototype.test1000 = 1000;
+ for ( let key in foo5){
+	console.log(key);
+	}
+ objects.keys(foo5);
+
+test
+test1000
+
+
+- function FooConstructor(){
+	this.test = "test"
+}
+
+ const foo6 = new FooConstructor();
+
+ FooConstructor.prototype.test1000 = 1000;
+ for ( let key in foo6){
+	foo6.hasOwnProperty (key) && console.log(key);
+	}
+ objects.keys(foo6);
+
+-test
+
+
+
+
+
+
